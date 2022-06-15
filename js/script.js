@@ -1,7 +1,9 @@
 // require('es6-promise').polyfill();
 
 
-// import tabs from './modules/tabs';
+// import firebase from 'firebase';
+// import 'firebase/firestore'
+
 // import popup from './modules/popup';
 // import timer from './modules/timer';
 // import slider from './modules/slider';
@@ -9,6 +11,22 @@
 // import cards from './modules/cards';
 // import calculate from './modules/calculate';
 // import { openModal } from './modules/popup';
+// const firebaseConfig = {
+//     apiKey: "AIzaSyB9z44PdAD_MFZNLoTsFABNngDHTjR-goU",
+//     authDomain: "food-2f0bf.firebaseapp.com",
+//     projectId: "food-2f0bf",
+//     storageBucket: "food-2f0bf.appspot.com",
+//     messagingSenderId: "146703305250",
+//     appId: "1:146703305250:web:1ee51e7d5aa9219a12d87b"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+
+
+// const firestore = firebase.firestore()
+// const messages = firestore.collection('food-2f0bf')
+// console.log(messages)
 document.addEventListener('DOMContentLoaded', () => {
     // const modalTimer = setTimeout(() => openModal('.modal', modalTimer), 50000);
     function calculate() {
@@ -250,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // SLIDER ВАРИАНТ 2 
 
-
         const slides = document.querySelectorAll(slide),
             slider = document.querySelector(container),
             prev = document.querySelector(prevArrow),
@@ -328,6 +345,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     };
+
+
     function openModal(modalSelector, modalTimer) {
         const modal = document.querySelector(modalSelector);
         modal.classList.add('show');
@@ -387,6 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
             success: 'Спасибо,скоро мы с Вами свяжемся',
             failure: 'Что-то пошло не так'
         }
+
         forms.forEach(item => {
             bindPostData(item);
         })
@@ -477,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function getResource(url) {
         const res = await fetch(url);
         if (!res.ok) {
-            throw new Error(`Could not fetch ${url},status^ ${res.status}`);
+            throw new Error(`Could not fetch ${url},status ${res.status}`);
         }
         return await res.json();
     }
