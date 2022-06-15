@@ -1,0 +1,23 @@
+{
+  "name": "newpr",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node server.js",
+    "json-server": "json-server --watch db.json --port=3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "proxy": "http://localhost:3000",
+  "browserslist": [
+    "> 1%"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.21.1",
+    "json-server": "^0.17.0"
+  }
+}
